@@ -37,7 +37,7 @@ const createBlock = (data) => {
 }
 
 const blockHash = (block) => {
-	return CryptoJS.SHA256(`${block.index}, ${block.prevHash}, ${JSON.stringify(block.data)}, ${block.timestamp}`).toString(CryptoJS.enc.hex)
+	return CryptoJS.SHA256(JSON.stringify(block)).toString(CryptoJS.enc.hex)
 }
 
 const verifyBlock = (block) => {
